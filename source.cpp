@@ -19,20 +19,59 @@ struct book
 class baselib           //  abstr fabr
 {
 public:
-    book* b;
+    book *b = new book [30];
+    int k=0;
     void fileread ()
     {
 
     }
-    void addb ()
+    virtual void addb () = 0;   //zavisit ot janra
+    void delb (string bookname, string aut, string izd, int y)
     {
-
+        int i=0;
+        int j=0;
+        for (i=0; i<k; i++)
+        {
+            if ((b[i].name == bookname)&&(b[i].autor==aut)&&(b[i].publishing==izd)&&(b[i].year==y))
+            {
+                for (j=i; j<k-1; j++)
+                {
+                    b[j]=b[j+1];
+                }
+                k--;
+            }
+        }
     }
-    void delb ()
+    void chab (string bookname, string aut, string izd, int y)        // izmenit info o kn
     {
+        int i;
+        cout<<"What you want to change?"<<endl;
+        cout<<"1:year of publishing"<<endl;
+        cout<<"2:format"<<endl;
+        cout<<"3:number of copies"<<endl;
+        cout<<"4:number of copies in the library"<<endl;
+        cout<<"5:binding"<<endl;
+        cout<<"6:series"<<endl;
+        cin>>i;
+        switch (i)
+        {
+        case 1:
 
+        case 2:
+
+        case 3:
+
+        case 4:
+
+        case 5:
+
+        case 6:
+
+        default:
+
+        }
     }
-    void chab ()        // izmenit info o kn
+    void printlib ()
     {
 
     }
