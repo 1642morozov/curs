@@ -42,14 +42,16 @@ public:
             }
         }
     }
-    void chab (string bookname, string aut, string izd, int y)        // izmenit info o kn
+    int chab (string bookname, string aut, string izd, int y)        // izmenit info o kn
     {
-        int i, j;
+        int i, j, a;
         string l;
+        a=0;
         for (i=0; i<k; i++)
         {
             if ((b[i].name == bookname)&&(b[i].autor==aut)&&(b[i].publishing==izd)&&(b[i].year==y))
             {
+                a=1;
                 chloop:
                 cout<<"What you want to change?"<<endl;
                 cout<<"1:year of publishing"<<endl;
@@ -91,7 +93,7 @@ public:
                     b[i].binding = j;
                     goto chloop;
                 case 6:
-                    cout<<"enter series separate by comma"<<endl;
+                    cout<<"enter series"<<endl;
                     cin>>l;
                     b[i].series = l;
                     goto chloop;
@@ -112,26 +114,181 @@ public:
             }
 
         }
+        return a;
     }
     void printlib ()
     {
-
+        int i;
+        for (i=0; i<k; i++)
+        {
+            cout<<endl;
+            cout<<b[i].name<<endl;
+            cout<<b[i].autor<<endl;
+            cout<<b[i].series<<endl;
+            cout<<b[i].publishing<<endl;
+            cout<<"year of publishing: ";
+            cout<<b[i].year<<endl;
+            cout<<"number of pages: ";
+            cout<<b[i].page<<endl;
+            if (b[i].binding == 1)
+            {
+                cout<<"hard cover"<<endl;
+            }
+            else
+            {
+                cout<<"soft cover"<<endl;
+            }
+            cout<<"format: A";
+            cout<<b[i].format<<endl;
+            cout<<"number of copies: ";
+            cout<<b[i].noc<<endl;
+            cout<<"number of copies in library: ";
+            cout<<b[i].n<<endl;
+        }
     }
-    void searchb ()     // poisk kn
+    int searchb (string bookname)     // poisk kn
     {
-
+        int i, a;
+        a=0;
+        for (i=0; i<k; i++)
+        {
+            if (b[i].name == bookname)
+            {
+                a=1;
+            cout<<endl;
+            cout<<b[i].name<<endl;
+            cout<<b[i].autor<<endl;
+            cout<<b[i].series<<endl;
+            cout<<b[i].publishing<<endl;
+            cout<<"year of publishing: ";
+            cout<<b[i].year<<endl;
+            cout<<"number of pages: ";
+            cout<<b[i].page<<endl;
+            if (b[i].binding == 1)
+            {
+                cout<<"hard cover"<<endl;
+            }
+            else
+            {
+                cout<<"soft cover"<<endl;
+            }
+            cout<<"format: A";
+            cout<<b[i].format<<endl;
+            cout<<"number of copies: ";
+            cout<<b[i].noc<<endl;
+            cout<<"number of copies in library: ";
+            cout<<b[i].n<<endl;
+            }
+        }
+        return a;
     }
-    void searcha ()     // poisk po autoru
+    int searcha (string aut)     // poisk po autoru
     {
-
+        int i, a;
+        a=0;
+        for (i=0; i<k; i++)
+        {
+            if (b[i].autor == aut)
+            {
+                a=1;
+            cout<<endl;
+            cout<<b[i].name<<endl;
+            cout<<b[i].autor<<endl;
+            cout<<b[i].series<<endl;
+            cout<<b[i].publishing<<endl;
+            cout<<"year of publishing: ";
+            cout<<b[i].year<<endl;
+            cout<<"number of pages: ";
+            cout<<b[i].page<<endl;
+            if (b[i].binding == 1)
+            {
+                cout<<"hard cover"<<endl;
+            }
+            else
+            {
+                cout<<"soft cover"<<endl;
+            }
+            cout<<"format: A";
+            cout<<b[i].format<<endl;
+            cout<<"number of copies: ";
+            cout<<b[i].noc<<endl;
+            cout<<"number of copies in library: ";
+            cout<<b[i].n<<endl;
+            }
+        }
+        return a;
     }
-    void searchs ()     // poisk po serii
+    int searchs (string ser)     // poisk po serii
     {
-
+        int i, a;
+        a=0;
+        for (i=0; i<k; i++)
+        {
+            if (b[i].series == ser)
+            {
+                a=1;
+            cout<<endl;
+            cout<<b[i].name<<endl;
+            cout<<b[i].autor<<endl;
+            cout<<b[i].series<<endl;
+            cout<<b[i].publishing<<endl;
+            cout<<"year of publishing: ";
+            cout<<b[i].year<<endl;
+            cout<<"number of pages: ";
+            cout<<b[i].page<<endl;
+            if (b[i].binding == 1)
+            {
+                cout<<"hard cover"<<endl;
+            }
+            else
+            {
+                cout<<"soft cover"<<endl;
+            }
+            cout<<"format: A";
+            cout<<b[i].format<<endl;
+            cout<<"number of copies: ";
+            cout<<b[i].noc<<endl;
+            cout<<"number of copies in library: ";
+            cout<<b[i].n<<endl;
+            }
+        }
+        return a;
     }
-    void searchi ()     // poisk po izdatelu
+    int searchi (string izd)     // poisk po izdatelu
     {
-
+        int i, a;
+        a=0;
+        for (i=0; i<k; i++)
+        {
+            if (b[i].publishing == izd)
+            {
+                a=1;
+            cout<<endl;
+            cout<<b[i].name<<endl;
+            cout<<b[i].autor<<endl;
+            cout<<b[i].series<<endl;
+            cout<<b[i].publishing<<endl;
+            cout<<"year of publishing: ";
+            cout<<b[i].year<<endl;
+            cout<<"number of pages: ";
+            cout<<b[i].page<<endl;
+            if (b[i].binding == 1)
+            {
+                cout<<"hard cover"<<endl;
+            }
+            else
+            {
+                cout<<"soft cover"<<endl;
+            }
+            cout<<"format: A";
+            cout<<b[i].format<<endl;
+            cout<<"number of copies: ";
+            cout<<b[i].noc<<endl;
+            cout<<"number of copies in library: ";
+            cout<<b[i].n<<endl;
+            }
+        }
+        return a;
     }
 
 };
