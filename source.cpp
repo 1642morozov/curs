@@ -44,30 +44,72 @@ public:
     }
     void chab (string bookname, string aut, string izd, int y)        // izmenit info o kn
     {
-        int i;
-        cout<<"What you want to change?"<<endl;
-        cout<<"1:year of publishing"<<endl;
-        cout<<"2:format"<<endl;
-        cout<<"3:number of copies"<<endl;
-        cout<<"4:number of copies in the library"<<endl;
-        cout<<"5:binding"<<endl;
-        cout<<"6:series"<<endl;
-        cin>>i;
-        switch (i)
+        int i, j;
+        string l;
+        for (i=0; i<k; i++)
         {
-        case 1:
-
-        case 2:
-
-        case 3:
-
-        case 4:
-
-        case 5:
-
-        case 6:
-
-        default:
+            if ((b[i].name == bookname)&&(b[i].autor==aut)&&(b[i].publishing==izd)&&(b[i].year==y))
+            {
+                chloop:
+                cout<<"What you want to change?"<<endl;
+                cout<<"1:year of publishing"<<endl;
+                cout<<"2:format"<<endl;
+                cout<<"3:number of copies"<<endl;
+                cout<<"4:number of copies in the library"<<endl;
+                cout<<"5:binding"<<endl;
+                cout<<"6:series"<<endl;
+                cout<<"7:exit"<<endl;
+                cin>>i;
+                switch (i)
+                {
+                case 1:
+                    cout<<"year"<<endl;
+                    cin>>j;
+                    b[i].year = j;
+                    goto chloop;
+                case 2:
+                    cout<<"enter a number corresponding to the format"<<endl;
+                    cout<<" for example: A4=4, A5=5"<<endl;
+                    cin>>j;
+                    b[i].format = j;
+                    goto chloop;
+                case 3:
+                    cout<<"number of copies"<<endl;
+                    cin>>j;
+                    b[i].noc = j;
+                    goto chloop;
+                case 4:
+                    cout<<"number of copies in the library"<<endl;
+                    cin>>j;
+                    b[i].n = j;
+                    goto chloop;
+                case 5:
+                    cout<<"binding"<<endl;
+                    cout<<"1 - hard cover"<<endl;
+                    cout<<"2 - soft cover"<<endl;
+                    cin>>j;
+                    b[i].binding = j;
+                    goto chloop;
+                case 6:
+                    cout<<"enter series separate by comma"<<endl;
+                    cin>>l;
+                    b[i].series = l;
+                    goto chloop;
+                case 7:
+                    cout<<"exit"<<endl;
+                    cout<<b[i].autor<<endl;
+                    cout<<b[i].name<<endl;
+                    cout<<b[i].year<<endl;
+                    cout<<b[i].binding<<endl;
+                    cout<<b[i].format<<endl;
+                    cout<<b[i].n<<endl;
+                    cout<<b[i].noc<<endl;
+                    cout<<b[i].series<<endl;
+                default:
+                    cout<<"error"<<endl;
+                    goto chloop;
+                }
+            }
 
         }
     }
