@@ -1,0 +1,15 @@
+comedy
+random petrov ast none 2001 100 1 4 1000 50
+joke sidorov ast none 2005 70 2 6 1000 30
+tragedy
+sadness petrov ast none 2000 500 1 5 2000 40
+sadness sidorov press none 2005 600 2 5 1500 30
+sadness petrov ast none 2006 250 1 4 5000 40
+drama
+one ivanov print drams 2010 100 2 5 1000 70
+two ivanov print drams 2010 120 2 5 1000 70
+three ivanov print drams 2010 150 2 5 1000 70
+lyrical
+poem ivanov press none 2013 50 2 5 1500 10
+poems ivanov press none 2014 50 2 5 1500 12
+===

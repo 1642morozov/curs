@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1557602083 source:c:\users\Михаил\documents\codeblocks\projects\curs32\source.cpp
+	<iostream>
+	<fstream>
+

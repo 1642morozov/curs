@@ -21,10 +21,37 @@ class baselib           //  abstr fabr
 public:
     book *b = new book [30];
     int k;
-    /*void fileread ()
+    /*
+    void fileread (string name, string aut, string izd, string ser, int y,int p, int b, int form, int noc, int n)
     {
+        b[k].name = name;
+        b[i].series = l;
+        b[k].autor = aut;
+        b[k].publishing = izd;
+        b[k].series = ser;
+        b[k].year = y;
+        b[k].page = p;
+        b[k].binding = b;
+        b[k].format = form;
+        b[k].noc = noc;
+        b[k].n = n;
+        k++;
+    }
+    */
+    void fileread(book tb)
+    {
+        b[k]=tb;
+        k++;
+    }
+    book getb(int i)
+    {
+        return b[i];
+    }
+    int getk()
+    {
+        return k;
+    }
 
-    }*/
     virtual void addb () = 0;   //zavisit ot janra
     void delb (string bookname, string aut, string izd, int y)
     {
@@ -53,7 +80,7 @@ public:
             {
                 a=1;
                 chloop:
-                cout<<"What you want to change?"<<endl;
+                cout<<endl<<"What you want to change?"<<endl;
                 cout<<"1:year of publishing"<<endl;
                 cout<<"2:format"<<endl;
                 cout<<"3:number of copies"<<endl;
@@ -132,7 +159,7 @@ public:
                     cout<<b[i].format<<endl;
                     cout<<b[i].n<<endl;
                     cout<<b[i].noc<<endl;
-                    cout<<b[i].series<<endl;
+                    cout<<b[i].series<<endl<<endl;
                     break;
                     }
                 default:
@@ -152,13 +179,13 @@ public:
         for (i=0; i<k; i++)
         {
             cout<<endl;
-            cout<<b[i].name<<endl;
-            cout<<b[i].autor<<endl;
-            cout<<b[i].series<<endl;
-            cout<<b[i].publishing<<endl;
-            cout<<"year of publishing: ";
+            cout<<"title:               "<<b[i].name<<endl;
+            cout<<"author:              "<<b[i].autor<<endl;
+            cout<<"series:              "<<b[i].series<<endl;
+            cout<<"publishing:          "<<b[i].publishing<<endl;
+            cout<<"year of publishing:  ";
             cout<<b[i].year<<endl;
-            cout<<"number of pages: ";
+            cout<<"number of pages:     ";
             cout<<b[i].page<<endl;
             if (b[i].binding == 1)
             {
@@ -188,9 +215,9 @@ public:
                 a=1;
             cout<<endl;
             cout<<b[i].name<<endl;
-            cout<<b[i].autor<<endl;
-            cout<<b[i].series<<endl;
-            cout<<b[i].publishing<<endl;
+            cout<<"author:  "<<b[i].autor<<endl;
+            cout<<"series:  "<<b[i].series<<endl;
+            cout<<"publish: "<<b[i].publishing<<endl;
             cout<<"year of publishing: ";
             cout<<b[i].year<<endl;
             cout<<"number of pages: ";
@@ -209,6 +236,7 @@ public:
             cout<<b[i].noc<<endl;
             cout<<"number of copies in library: ";
             cout<<b[i].n<<endl;
+            cout<<endl;
             }
         }
         return a;
@@ -223,10 +251,10 @@ public:
             {
                 a=1;
             cout<<endl;
-            cout<<b[i].name<<endl;
-            cout<<b[i].autor<<endl;
-            cout<<b[i].series<<endl;
-            cout<<b[i].publishing<<endl;
+            cout<<"title:   "<<b[i].name<<endl;
+            cout<<"author:  "<<b[i].autor<<endl;
+            cout<<"series:  "<<b[i].series<<endl;
+            cout<<"publish: "<<b[i].publishing<<endl;
             cout<<"year of publishing: ";
             cout<<b[i].year<<endl;
             cout<<"number of pages: ";
@@ -245,6 +273,7 @@ public:
             cout<<b[i].noc<<endl;
             cout<<"number of copies in library: ";
             cout<<b[i].n<<endl;
+            cout<<endl;
             }
         }
         return a;
@@ -259,10 +288,10 @@ public:
             {
                 a=1;
             cout<<endl;
-            cout<<b[i].name<<endl;
-            cout<<b[i].autor<<endl;
-            cout<<b[i].series<<endl;
-            cout<<b[i].publishing<<endl;
+            cout<<"title:   "<<b[i].name<<endl;
+            cout<<"author:  "<<b[i].autor<<endl;
+            cout<<"series:  "<<b[i].series<<endl;
+            cout<<"publish: "<<b[i].publishing<<endl;
             cout<<"year of publishing: ";
             cout<<b[i].year<<endl;
             cout<<"number of pages: ";
@@ -281,6 +310,7 @@ public:
             cout<<b[i].noc<<endl;
             cout<<"number of copies in library: ";
             cout<<b[i].n<<endl;
+            cout<<endl;
             }
         }
         return a;
@@ -295,10 +325,10 @@ public:
             {
                 a=1;
             cout<<endl;
-            cout<<b[i].name<<endl;
-            cout<<b[i].autor<<endl;
-            cout<<b[i].series<<endl;
-            cout<<b[i].publishing<<endl;
+            cout<<"title:   "<<b[i].name<<endl;
+            cout<<"author:  "<<b[i].autor<<endl;
+            cout<<"series:  "<<b[i].series<<endl;
+            cout<<"publish: "<<b[i].publishing<<endl;
             cout<<"year of publishing: ";
             cout<<b[i].year<<endl;
             cout<<"number of pages: ";
@@ -317,6 +347,7 @@ public:
             cout<<b[i].noc<<endl;
             cout<<"number of copies in library: ";
             cout<<b[i].n<<endl;
+            cout<<endl;
             }
         }
         return a;
@@ -334,6 +365,7 @@ public:
     }
     void addb()                 //vvod informacii nachinaetsa v osnovnoy programme!!!
     {
+        cout<<endl;
         cout<<"book title: ";
         cin>>b[k].name;
         cout<<"author: ";
@@ -366,6 +398,7 @@ public:
         cin>>b[k].noc;
         cout<<"number of copies in library: ";
         cin>>b[k].n;
+        cout<<endl;
         k++;
     }
 };
@@ -379,6 +412,7 @@ public:
     }
     void addb()                 //vvod informacii nachinaetsa v osnovnoy programme!!!
     {
+        cout<<endl;
         cout<<"book title: ";
         cin>>b[k].name;
         cout<<"author: ";
@@ -411,6 +445,7 @@ public:
         cin>>b[k].noc;
         cout<<"number of copies in library: ";
         cin>>b[k].n;
+        cout<<endl;
         k++;
     }
 };
@@ -424,6 +459,7 @@ public:
     }
     void addb()                 //vvod informacii nachinaetsa v osnovnoy programme!!!
     {
+        cout<<endl;
         cout<<"book title: ";
         cin>>b[k].name;
         cout<<"author: ";
@@ -456,6 +492,7 @@ public:
         cin>>b[k].noc;
         cout<<"number of copies in library: ";
         cin>>b[k].n;
+        cout<<endl;
         k++;
     }
 };
@@ -469,6 +506,7 @@ public:
     }
     void addb()                 //vvod informacii nachinaetsa v osnovnoy programme!!!
     {
+        cout<<endl;
         cout<<"book title: ";
         cin>>b[k].name;
         cout<<"author: ";
@@ -502,6 +540,7 @@ public:
         cout<<"number of copies in library: ";
         cin>>b[k].n;
         k++;
+        cout<<endl;
     }
 };
 
@@ -528,12 +567,16 @@ class mainlib
         {
             cout<<"comedy:"<<endl;
             cb->printlib();
+            cout<<"-----------------------------------"<<endl;
             cout<<"tragedy:"<<endl;
             tb->printlib();
+            cout<<"-----------------------------------"<<endl;
             cout<<"drama:"<<endl;
             db->printlib();
+            cout<<"-----------------------------------"<<endl;
             cout<<"lyrical:"<<endl;
             lb->printlib();
+            cout<<endl;
         }
 
         void addb()
@@ -733,68 +776,124 @@ class mainlib
                 }
             }
         }
-/*
-        void save()
+
+        int sti(string s)
         {
-            ofstream fin;
-            fin.open("save.sav",std::ios::out);
-            fin<<rm->getamt()<<"\t"<<vm->getamt()<<endl;
-            for (int i = 0; i < rm->getamt();++i)
+            int x, i, a;
+            x = s.length();
+            a=0;
+            for(i = 0; i < x; i++)
             {
-                mark temp = rm->getmark(i);
-                fin<<temp.country<<"\t"<<temp.emittype<<"\t"<<temp.material<<"\t"<<temp.name<<"\t"<<temp.prestory<<"\t"<<temp.purpose<<"\t"<<temp.shape<<endl;
+                a =10*a+(s[i]-'0');
             }
-            for (int i = 0; i < vm->getamt();++i)
-            {
-                mark temp = vm->getmark(i);
-                fin<<temp.country<<"\t"<<temp.emittype<<"\t"<<temp.material<<"\t"<<temp.name<<"\t"<<temp.prestory<<"\t"<<temp.purpose<<"\t"<<temp.shape<<endl;
-            }
-            fin.close();
+            return a;
         }
-        void load()
+        void fileread()
         {
-            vm->deleteall();
-            rm->deleteall();
-            int amt1, amt2;
-            string t;
-            mark temp;
-            ifstream fout;
-            try
+            int i, j, gn;
+            string tmp, buf;
+            string  ty, tp, tbind, tf, tnoc, tn;
+            int iy, ip, ib, iform, inoc, inum;
+            book tbook;
+            ifstream f("datalibrary.txt");
+            if (!f.is_open())
+                cout << "error: no such file"<<endl;
+            else
             {
-                fout.open("save.sav",std::ios::out);
-                getline(fout,t,'\t');
-                amt1 = stoi(t);
-                getline(fout,t);
-                amt2 = stoi(t);
-                for (int i = 0; i < amt1; i++)
+                gn =0;
+                while (f)
                 {
-                    getline(fout,t,'\t'); temp.country = t;
-                    getline(fout,t,'\t'); temp.emittype = t[0];
-                    getline(fout,t,'\t'); temp.material = t[0];
-                    getline(fout,t,'\t'); temp.name = t;
-                    getline(fout,t,'\t'); temp.prestory = t;
-                    getline(fout,t,'\t'); temp.purpose = t[0];
-                    getline(fout,t); temp.shape = t[0];
-                    rm->getfromfile(temp);
+                    f >> buf;
+                    if (buf == "===")
+                    {
+                        goto endfl;
+                    }
+                    if ((buf == "comedy")||(buf == "tragedy")||(buf == "drama")||(buf == "lyrical"))
+                    {
+                        if (buf == "comedy")
+                            gn =1;
+                        if (buf == "tragedy")
+                            gn =2;
+                        if (buf == "drama")
+                            gn =3;
+                        if (buf == "lyrical")
+                            gn =4;
+                    }
+                    else
+                    {
+                        tbook.name = buf;
+                        f >> buf; tbook.autor = buf;
+                        f >> buf; tbook.publishing = buf;
+                        f >> buf; tbook.series = buf;
+                        f >> buf; ty = buf;
+                        f >> buf; tp = buf;
+                        f >> buf; tbind = buf;
+                        f >> buf; tf = buf;
+                        f >> buf; tnoc = buf;
+                        f >> buf; tn = buf;
+                        tbook.year = sti(ty);
+                        tbook.page = sti(tp);
+                        tbook.binding = sti(tbind);
+                        tbook.format = sti(tf);
+                        tbook.noc = sti(tnoc);
+                        tbook.n = sti(tn);
+                        if (gn == 1)
+                        {
+                            cb->fileread(tbook);
+                        }
+                        if (gn == 2)
+                        {
+                            tb->fileread(tbook);
+                        }
+                        if (gn == 3)
+                        {
+                            db->fileread(tbook);
+                        }
+                        if (gn == 4)
+                        {
+                            lb->fileread(tbook);
+                        }
+                    }
                 }
-                for (int i = 0; i < amt2; i++)
-                {
-                    getline(fout,t,'\t'); temp.country = t;
-                    getline(fout,t,'\t'); temp.emittype = t[0];
-                    getline(fout,t,'\t'); temp.material = t[0];
-                    getline(fout,t,'\t'); temp.name = t;
-                    getline(fout,t,'\t'); temp.prestory = t;
-                    getline(fout,t,'\t'); temp.purpose = t[0];
-                    getline(fout,t); temp.shape = t[0];
-                    vm->getfromfile(temp);
-                }
-                fout.close();
+                endfl:
+                f.close();
             }
-            catch(int error)
+        }
+        void filesave()
+        {
+            int n, i;
+            ofstream fout("datalibrary.txt");
+            n=cb->getk();
+            fout<<"comedy"<<endl;
+            for (i=0; i<n; i++)
             {
-                cout<<"Error! File is corrupt or non-existent!"<<endl;
+                book tmp = cb->getb(i);
+                fout<<tmp.name<<' '<<tmp.autor<<' '<<tmp.publishing<<' '<<tmp.series<<' '<<tmp.year<<' '<<tmp.page<<' '<<tmp.binding<<' '<<tmp.format<<' '<<tmp.noc<<' '<<tmp.n<<endl;
             }
-        } */
+            n=tb->getk();
+            fout<<"tragedy"<<endl;
+            for (i=0; i<n; i++)
+            {
+                book tmp = tb->getb(i);
+                fout<<tmp.name<<' '<<tmp.autor<<' '<<tmp.publishing<<' '<<tmp.series<<' '<<tmp.year<<' '<<tmp.page<<' '<<tmp.binding<<' '<<tmp.format<<' '<<tmp.noc<<' '<<tmp.n<<endl;
+            }
+            n=db->getk();
+            fout<<"drama"<<endl;
+            for (i=0; i<n; i++)
+            {
+                book tmp = db->getb(i);
+                fout<<tmp.name<<' '<<tmp.autor<<' '<<tmp.publishing<<' '<<tmp.series<<' '<<tmp.year<<' '<<tmp.page<<' '<<tmp.binding<<' '<<tmp.format<<' '<<tmp.noc<<' '<<tmp.n<<endl;
+            }
+            n=lb->getk();
+            fout<<"lyrical"<<endl;
+            for (i=0; i<n; i++)
+            {
+                book tmp = lb->getb(i);
+                fout<<tmp.name<<' '<<tmp.autor<<' '<<tmp.publishing<<' '<<tmp.series<<' '<<tmp.year<<' '<<tmp.page<<' '<<tmp.binding<<' '<<tmp.format<<' '<<tmp.noc<<' '<<tmp.n<<endl;
+            }
+            fout<<"==="<<endl;
+            fout.close();
+        }
 };
 
 
@@ -830,7 +929,7 @@ int main()
         }
     case 4:
         {
-            //??????????????????????????????????????????????????????????????????????
+            libr->fileread();
             goto mainmenu;
             break;
         }
@@ -858,7 +957,7 @@ int main()
         }
     }
     exitmenu:
-    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!dobavit sohranenie!!!!!!!!!!!!!!!!!!!!!!!!!!
+    libr->filesave();
     cout<<"end"<<endl;
     cin>>i;
     return 0;
