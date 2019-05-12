@@ -21,23 +21,6 @@ class baselib           //  abstr fabr
 public:
     book *b = new book [30];
     int k;
-    /*
-    void fileread (string name, string aut, string izd, string ser, int y,int p, int b, int form, int noc, int n)
-    {
-        b[k].name = name;
-        b[i].series = l;
-        b[k].autor = aut;
-        b[k].publishing = izd;
-        b[k].series = ser;
-        b[k].year = y;
-        b[k].page = p;
-        b[k].binding = b;
-        b[k].format = form;
-        b[k].noc = noc;
-        b[k].n = n;
-        k++;
-    }
-    */
     void fileread(book tb)
     {
         b[k]=tb;
@@ -959,6 +942,5 @@ int main()
     exitmenu:
     libr->filesave();
     cout<<"end"<<endl;
-    cin>>i;
     return 0;
 }
